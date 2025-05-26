@@ -5,7 +5,6 @@ if (!defined('ABSPATH')){
 };
 
 if ( ! function_exists( 'wp_check_password' ) ) :
-		trigger_error('Definind wp_check_password');
 	/**
 	 * Checks the plaintext password against the encrypted Password.
 	 *
@@ -29,7 +28,6 @@ if ( ! function_exists( 'wp_check_password' ) ) :
 	 * @return bool False, if the $password does not match the hashed password.
 	 */
 	function wp_check_password( $password, $hash, $user_id = '' ) {
-		trigger_error('Using wp_check_password');
 		global $wp_hasher;
 
 		if ( ! empty( $wp_hasher ) ) {
@@ -72,7 +70,7 @@ if ( ! function_exists( 'wp_check_password' ) ) :
 			$check = true;
 		} elseif ( str_starts_with( $hash, '$wp' ) ) {
 			// Handle password from WordPress 6.8 and above
-			$password_to_verify = base64_encode( hash_hmac( 'sha384', $maybe_peppered_password, 'wp-sha384', true ) );
+			$password_to_verify = base64_encode( hash_hmac( 'sha384', $maybe_peppered_password, 'wp-sha384', true ) ); // phpcs:ignore WordPress.PHP.DiscouragedPHPFunctions.obfuscation_base64_encode
 			$check              = password_verify( $password_to_verify, substr( $hash, 3 ) );
 		} elseif ( str_starts_with( $hash, '$P$' ) ) {
 			// Handle password verification by the traditional WordPress method.
