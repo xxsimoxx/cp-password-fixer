@@ -5,7 +5,7 @@ if (!defined('ABSPATH')){
 };
 
 if ( ! function_exists( 'wp_check_password' ) ) :
-		trigger_error('defining functions!');
+		trigger_error('Definind wp_check_password');
 	/**
 	 * Checks the plaintext password against the encrypted Password.
 	 *
@@ -29,7 +29,7 @@ if ( ! function_exists( 'wp_check_password' ) ) :
 	 * @return bool False, if the $password does not match the hashed password.
 	 */
 	function wp_check_password( $password, $hash, $user_id = '' ) {
-		trigger_error('New wp_check_password');
+		trigger_error('Using wp_check_password');
 		global $wp_hasher;
 
 		if ( ! empty( $wp_hasher ) ) {

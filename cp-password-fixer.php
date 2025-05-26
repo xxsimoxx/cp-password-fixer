@@ -27,7 +27,7 @@ if (version_compare($cp_version, '2.4.1', 'gt')) {
 	return;
 }
 
-require_once __DIR__.'/pluggable.php';
+require __DIR__.'/pluggable.php';
 
 // Support functions.
 
@@ -54,23 +54,7 @@ function cppf_no_more_useful_nag($plugin_file, $plugin_data) {
 		</td>
 	</tr>
 	<script>
-		document.querySelector('tr[data-plugin="<?php echo $plugin_file; ?>"').classList.add('update');
+		document.querySelector('tr[data-plugin="<?php echo esc_html($plugin_file); ?>"').classList.add('update');
 	</script>
 	<?php
 }
-
-if ( ! function_exists( 'wp_hash' ) ) :
-	/**
-	 * Gets hash of given string.
-	 *
-	 * @since 2.0.3
-	 *
-	 * @param string $data   Plain text to hash.
-	 * @param string $scheme Authentication scheme (auth, secure_auth, logged_in, nonce).
-	 * @return string Hash of $data.
-	 */
-	function wp_hash( $data, $scheme = 'auth' ) {
-
-		return 'ciao';
-	}
-endif;
