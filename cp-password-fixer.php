@@ -2,10 +2,10 @@
 /**
  * Plugin Name:  ClassicPress password fixer
  * Description:  Fix password when migrated from WP 6.8 or above
- * Version:      0.9.0
+ * Version:      1.0.0
  * License:      GPL2
  * License URI:  https://www.gnu.org/licenses/gpl-2.0.html
- * Author:       Gieffe edizioni srl
+ * Author:       Simone Fioravanti
  * Requires CP:  2.0
  * Requires PHP: 7.4
  */
